@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<h2 style="color:red">welcome to my wordcount website</h2>
+<!--<p>Hello {{name}}</p>-->
+
+<a href="{% url 'about'%}">Go to about</a>......
+<a href="{% url 'contact'%}">Go to contact</a>
+<center><form action="{% url 'home' %}" method="post">
+    {% csrf_token %}
+<fieldset>
+    <table>
+        <caption><h2>Django Calculator</h2></caption>
+        <tr>
+            <td>Enter value 1:-</td>
+            <td><input type="text" name="t1" value="{{n1}}"></td>
+        </tr>
+         <tr>
+            <td>Enter value 2:-</td>
+            <td><input type="text" name="t2"value="{{n2}}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit" value="add" name="btn">ADD</button>
+            <button type="submit" value="sub" name="btn">SUB</button>
+            <button type="submit" value="mul" name="btn">MUL</button>
+            <button type="submit" value="div" name="btn">DIV</button></td>
+
+        </tr>
+    </table>
+    <p>Result:-{{result}}</p>
+    </fieldset>
+
+
+</form>
+    </center>
+
+
+</body>
+</html>
